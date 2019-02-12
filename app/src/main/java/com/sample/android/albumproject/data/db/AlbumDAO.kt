@@ -11,7 +11,7 @@ import com.sample.android.albumproject.model.Album
 interface AlbumDAO {
 
     @Query("SELECT * FROM albums")
-    fun getCities(): LiveData<List<Album>>
+    fun getAlbums(): LiveData<List<Album>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(album: Album)
