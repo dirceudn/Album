@@ -11,20 +11,24 @@ import com.sample.android.albumproject.data.network.ApiService
 import com.sample.android.albumproject.model.Album
 import com.sample.android.albumproject.util.Constants
 import io.reactivex.schedulers.Schedulers
+import timber.log.Timber
 
-class AlbumRepository(aplication: Application) {
+class AlbumRepository {
 
     private val restApi: ApiService = ApiService.getService()
     private val albumDao: AlbumDAO = App.dataBaseInstace().albumDao()
     private val listLiveData: LiveData<List<Album>>
 
-    @SuppressLint("CheckResult", "BinaryOperationInTimber")
-    fun getRemoteALbums() {
-        restApi.getCurrentWeather(Constants.INSTANCE.url).subscribeOn(Schedulers.io())
+
+
+    @SuppressLint("CheckResult")
+    fun getRemoteAlbums() {
+        restApi.getAlbumList(Constants.INSTANCE.url).subscribeOn(Schedulers.io())
             .observeOn(Schedulers.computation())
-            .subscribe({ city ->
+            .subscribe({ albums ->
                 //  insert
-                insertAlbums(city)
+                Timber.d("oioi$albums")
+                insertAlbums(albums)
             }, { error ->
 
             })

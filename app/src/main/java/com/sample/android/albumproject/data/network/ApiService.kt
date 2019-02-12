@@ -7,16 +7,18 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Url
 
 interface ApiService {
 
-    @GET("/img/shared/technical-test.json")
-    fun getCurrentWeather(url: String): Observable<List<Album>>
+
+    @GET
+    fun getAlbumList(@Url url: String): Observable<List<Album>>
 
     companion object {
         fun getService(): ApiService {
             val retrofit = Retrofit.Builder()
-                .baseUrl(Constants.INSTANCE.url)
+                .baseUrl(Constants.INSTANCE.baseUrl)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

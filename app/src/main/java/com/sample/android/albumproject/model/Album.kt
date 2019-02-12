@@ -11,7 +11,4 @@ data class Album(
     var title: String?,
     var url: String?,
     var thumbnailUrl: String?
-) {
-    constructor() : this(0, 0, "", "", "")
-
-}
+)
