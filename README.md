@@ -64,5 +64,6 @@ The glide library in terms of optimization is superior to picasso and still supp
                 .into(imageView);
 ```
 
+### Dependency Injection
 
-
+I prefer using Dagger 2 for dependency injection in complex projects. But with the small or a simple projects Dagger 2 is not mandatory. 
