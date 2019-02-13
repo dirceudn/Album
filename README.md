@@ -10,3 +10,12 @@
 
 ## Implemented Features
 - Download a list of albums using a http request and displaying it in a recyclerview
+
+## App Architecture
+
+Here is an architecture diagram of the system. The first one is an overview of the components using MVVM android arch.
+
+![alt text](https://github.com/dirceudn/Album/blob/dev/MVVM-AlbumProject.png)
+
+## Libraries and technical decisions
+
