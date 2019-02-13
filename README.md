@@ -67,3 +67,7 @@ The glide library in terms of optimization is superior to picasso and still supp
 ### Dependency Injection
 
 I prefer using Dagger 2 for dependency injection in complex projects. But with the small or a simple projects Dagger 2 is not mandatory. 
+
+### Detekt
+
+A static code analysis tool for Kotlin.
