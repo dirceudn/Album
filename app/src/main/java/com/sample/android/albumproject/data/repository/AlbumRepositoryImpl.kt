@@ -55,4 +55,15 @@ class AlbumRepositoryImpl : AlbumRepository {
             return null
         }
     }
+
+
+    companion object {
+        private var INSTANCE: AlbumRepository? = null
+        fun getInstance(): AlbumRepository {
+            if (INSTANCE == null) {
+                INSTANCE = AlbumRepositoryImpl()
+            }
+            return INSTANCE!!
+        }
+    }
 }

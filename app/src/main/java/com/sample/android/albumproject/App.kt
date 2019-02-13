@@ -13,7 +13,6 @@ class App : Application() {
     companion object {
         private lateinit var albumApi: ApiService
         private lateinit var appDatabase: AppDatabase
-
         fun dataBaseInstance() = appDatabase
     }
 
