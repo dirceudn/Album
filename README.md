@@ -10,8 +10,6 @@
 
 ## Implemented Features
 - Download a list of albums using a http request and displaying it in a recyclerview
-<<<<<<< HEAD
-=======
 
 ## App Architecture
 
@@ -69,4 +67,7 @@ The glide library in terms of optimization is superior to picasso and still supp
 ### Dependency Injection
 
 I prefer using Dagger 2 for dependency injection in complex projects. But with the small or a simple projects Dagger 2 is not mandatory. 
->>>>>>> e03af6e5a738e545413b560eb24b574dc7ca0443
+
+### Detekt
+
+A static code analysis tool for Kotlin.
