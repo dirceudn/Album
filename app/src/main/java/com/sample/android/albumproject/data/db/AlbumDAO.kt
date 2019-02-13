@@ -17,5 +17,5 @@ interface AlbumDAO {
     fun insert(album: Album)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(users: List<Album>)
+    fun insertAll(users: List<Album>?)
 }
