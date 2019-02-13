@@ -4,20 +4,20 @@ import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.LiveData
 import com.sample.android.albumproject.data.repository.AlbumRepository
+import com.sample.android.albumproject.data.repository.AlbumRepositoryImpl
 import com.sample.android.albumproject.model.Album
 
 class AlbumViewModel(application: Application) : AndroidViewModel(application) {
 
     val albums: LiveData<List<Album>>
-    private val albumRepository: AlbumRepository = AlbumRepository()
+    private val albumRepositoryImpl: AlbumRepository = AlbumRepositoryImpl()
 
     init {
-
-        albums = albumRepository.getLocalAlbums()
+        albums = albumRepositoryImpl.getLocalAlbums()!!
     }
 
     fun loadAlbums() {
-        albumRepository.getRemoteAlbums()
+        albumRepositoryImpl.getRemoteAlbums()
     }
 
 }

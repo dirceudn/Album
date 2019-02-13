@@ -30,8 +30,8 @@ class AlbumsFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         mAlbumViewModel = ViewModelProviders.of(activity!!).get(AlbumViewModel::class.java)
-        initAdapter()
 
+        initAdapter()
         mAlbumViewModel?.loadAlbums()
 
 
@@ -51,3 +51,5 @@ class AlbumsFragment : Fragment() {
 
 
 }
+
+

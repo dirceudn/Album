@@ -14,18 +14,21 @@ class App : Application() {
         private lateinit var albumApi: ApiService
         private lateinit var appDatabase: AppDatabase
 
-        fun dataBaseInstace() = appDatabase
+        fun dataBaseInstance() = appDatabase
     }
 
 
     override fun onCreate() {
         super.onCreate()
+
         Timber.uprootAll()
         Timber.plant(Timber.DebugTree())
         albumApi = ApiService.getService()
 
-        appDatabase = Room.databaseBuilder(applicationContext,
-            AppDatabase::class.java, Constants.INSTANCE.data_base).build()
+        appDatabase = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java, Constants.INSTANCE.data_base
+        ).build()
 
 
     }

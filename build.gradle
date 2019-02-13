@@ -2,6 +2,8 @@
 
 buildscript {
     ext.kotlin_version = '1.3.21'
+    ext.koin_version = '2.0.0-beta-1'
+
     repositories {
         google()
         jcenter()
@@ -15,14 +17,32 @@ buildscript {
     }
 }
 
+plugins {
+    id "io.gitlab.arturbosch.detekt" version "1.0.0-RC12"
+}
+
+
 allprojects {
+
+    apply from: "$rootDir/detekt.gradle"
+
     repositories {
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url 'https://jitpack.io' }
         google()
         jcenter()
+
         
     }
+
+
 }
+
+
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+task x(type: GradleBuild) { tasks = ["detekt"] }
