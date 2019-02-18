@@ -17,6 +17,7 @@ import com.sample.android.albumproject.model.Album
 import com.sample.android.albumproject.viewmodel.AlbumViewModel
 import kotlinx.android.synthetic.main.albums_fragment.*
 import com.sample.android.albumproject.viewmodel.ViewModelFactory
+import com.sample.android.albumproject.App
 
 
 class AlbumsFragment : Fragment() {
@@ -41,6 +42,12 @@ class AlbumsFragment : Fragment() {
         mAlbumViewModel?.loadAlbums()
 
 
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        App.getRefWatcher(activity!!).watch(this)
     }
 
 

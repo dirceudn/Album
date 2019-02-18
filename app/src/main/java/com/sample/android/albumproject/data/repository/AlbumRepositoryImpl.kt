@@ -37,7 +37,7 @@ class AlbumRepositoryImpl : AlbumRepository {
 
 
     override fun insertAlbums(albums: List<Album>?) {
-        InsertOnDB(albumDao).execute(albums)
+        albumDao.insertAll(albums)
 
 
     }
@@ -45,15 +45,6 @@ class AlbumRepositoryImpl : AlbumRepository {
     @WorkerThread
     override fun getLocalAlbums(): LiveData<List<Album>>? {
         return listLiveData
-    }
-
-    private class InsertOnDB internal constructor(private val mAsyncTaskDao: AlbumDAO) :
-        AsyncTask<List<Album>, Void, Void>() {
-
-        override fun doInBackground(vararg params: List<Album>): Void? {
-            mAsyncTaskDao.insertAll(params[0])
-            return null
-        }
     }
 
 
